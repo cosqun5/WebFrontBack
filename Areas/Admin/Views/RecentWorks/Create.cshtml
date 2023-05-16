@@ -1,0 +1,33 @@
+﻿@model RecentWork
+@{
+	ViewData["Title"] = "Create";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+
+			<form class="forms-sample" method="post" action="create">
+				<div class="form-group">
+					<label asp-for="Title"></label>
+					<input asp-for="Title" class="form-control" placeholder="Category">
+					<span class="text text-danger" asp-validation-for="Title"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Description"></label>
+					<input asp-for="Description" class="form-control" placeholder="Category">
+					<span class="text text-danger" asp-validation-for="Description"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Path"></label>
+					<input asp-for="Path" class="form-control" placeholder="Category">
+					<span class="text text-danger" asp-validation-for="Path"></span>
+				</div>
+				<button type="submit" class="btn btn-primary me-2 text-light">Create</button>
+				<button class="btn btn-light" asp-action="Index">Go back</button>
+
+			</form>
+		</div>
+	</div>
+</div>
+

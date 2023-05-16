@@ -1,0 +1,59 @@
+﻿@model ServiceVM;
+
+<div class="col-md-6 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+
+			<form action="Create" method="post" class="forms-sample">
+				<div class="form-group">
+					<label asp-for="Services.Name"  ></label>
+					<input asp-for="Services.Name" class="form-control" placeholder="Name">
+					<span class="text text-danger" asp-validation-for="Services.Name"></span>
+
+				</div>
+				<div class="form-group">
+					<label asp-for="Services.Description"></label>
+					<input asp-for="Services.Description" class="form-control" placeholder="Description">
+					<span class="text text-danger" asp-validation-for="Services.Description"></span>
+
+				</div>
+				<div class="form-group">
+					<label asp-for="Services.Price"></label>
+					<input asp-for="Services.Price" class="form-control" placeholder="Price">
+					<span class="text text-danger" asp-validation-for="Services.Price"></span>
+
+				</div>
+				<select style="width:150px; color:black" asp-for="Services.CategoryId" class="form-control">
+					@foreach (Category category in Model.Categories)
+					{
+						<option value="@category.Id">@category.Name</option>
+					}
+					
+				<span class="text text-danger" asp-validation-for="Services.Category.Name"></span>
+				</select>
+
+				<br />
+				<br />
+				@*<div class="form-group">
+					<label asp-for="Services.Description"></label>
+					<input asp-for="Services.Description" class="form-control" placeholder="Category">
+				</div>
+				<div class="form-group">
+					<label asp-for="Services.Price"></label>
+					<input asp-for="Services.Price" class="form-control" placeholder="Category">
+				</div>
+				<div class="form-group">
+					<select style="width:100px; color:black" name="Services.CategoryId" class="form-control">
+						@foreach (var category in Model.Categories)
+						{
+							<option value="@category.Id">@category.Name</option>
+						}
+					</select>
+				</div>*@
+				<button type="submit" class="btn btn-primary me-2 text-light">Create</button>
+				<button class="btn btn-light" asp-action="Index">Go back</button>
+
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,28 @@
+﻿@model TeamMember;
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label asp-for="FulName"></label>
+                    <input asp-for="FulName" class="form-control" placeholder="Category">
+                    <span class="text text-danger" asp-validation-for="FulName"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Profection"></label>
+                    <input asp-for="Profection" class="form-control" placeholder="Category">
+                    <span class="text text-danger" asp-validation-for="Profection"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Path"></label>
+                    <input asp-for="Path" class="form-control" placeholder="Category">
+                    <span class="text text-danger" asp-validation-for="Path"></span>
+                </div>
+                <button type="submit" class="btn btn-primary me-2 text-light">Edit</button>
+                <button class="btn btn-light" asp-action="Index">Go back</button>
+            </form>
+        </div>
+    </div>
+</div>
+
