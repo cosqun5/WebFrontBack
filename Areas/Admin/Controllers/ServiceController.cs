@@ -101,13 +101,12 @@ namespace WebFrontToBack.Areas.Admin.Controllers
 			_context.SaveChanges();
 			return RedirectToAction("Index");
 		}
-		//public IActionResult Update(Service service)
-		//{
-		//	Service? newservice = _context.Services.Find(service.Id);
 
-		//	newservice.Name =service.Name;
+		public IActionResult AddPhoto()
+		{
 
-		//	return RedirectToAction("Index");
-		//}
+			return View();
+		}
+
 	}
 }

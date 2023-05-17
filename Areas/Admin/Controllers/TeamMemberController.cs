@@ -1,7 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Metrics;
+using System.IO;
+using WebFrontToBack.Areas.Admin.TeamViewModels;
 using WebFrontToBack.DAL;
+using WebFrontToBack.Migrations;
 using WebFrontToBack.Models;
+using WebFrontToBack.Utilities.Extensions;
 
 namespace WebFrontToBack.Areas.Admin.Controllers
 {
@@ -9,9 +14,11 @@ namespace WebFrontToBack.Areas.Admin.Controllers
     public class TeamMemberController : Controller
     {
         private readonly AppDbContext _context;
-        public TeamMemberController(AppDbContext context)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public TeamMemberController(AppDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
         }
         public async Task<IActionResult> Index()
         {
@@ -24,13 +31,33 @@ namespace WebFrontToBack.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(TeamMember team)
+        public async Task<IActionResult> Create(CreateTeamMemberVM team)
         {
             if (!ModelState.IsValid)
             {
+				return View();
+			}
+            if (!team.Photo.CheckContentType("image/"))
+            {
+                ModelState.AddModelError("Photo", $"{team.Photo.FileName}must be image type");
                 return View();
             }
-            await _context.TeamMembers.AddAsync(team);
+            if (!team.Photo.CheckFileSize(200))
+            {
+                ModelState.AddModelError("Photo", $"{team.Photo.FileName} - file must be size less than 200kb ");
+                return View();
+
+			}
+            string root =Path.Combine(_webHostEnvironment.WebRootPath,"assets","img" );
+
+            string fileName = await team.Photo.SaveAsync(root);
+            TeamMember teamMember = new TeamMember()
+            {
+                FulName = team.FulName,
+                Path=fileName,
+                Profection=team.Profection,
+            };
+            await _context.TeamMembers.AddAsync(teamMember);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }

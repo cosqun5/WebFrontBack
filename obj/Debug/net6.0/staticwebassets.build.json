@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YjwNg8lxZWoZ5G1Lj3uyNzOi6xtmZV0RB9cchB7gKN4=",
+  "Hash": "fp06wLTy+3/gyDFj7zMaLgfh9MBJabxSpv40zVP9u4c=",
   "Source": "WebFrontToBack",
   "BasePath": "_content/WebFrontToBack",
   "Mode": "Default",
@@ -2752,6 +2752,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\banner-img-02.svg"
+    },
+    {
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\ca45fcaa-ee52-4bb0-a503-3a87dcb99d79IMG-20230429-WA0033.jpg",
+      "SourceId": "WebFrontToBack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\",
+      "BasePath": "_content/WebFrontToBack",
+      "RelativePath": "assets/img/ca45fcaa-ee52-4bb0-a503-3a87dcb99d79IMG-20230429-WA0033.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\ca45fcaa-ee52-4bb0-a503-3a87dcb99d79IMG-20230429-WA0033.jpg"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\favicon.ico",

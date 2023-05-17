@@ -1,4 +1,5 @@
-﻿@model ICollection<Service>
+﻿@using System.IO;
+@model ICollection<Service>
 @{
     int count = 1;
 }
@@ -29,6 +30,18 @@
                             <th>
                                 Category Name
                             </th>
+                            <th>
+                                Detail
+                            </th>
+                            <th>
+                                Update
+                            </th>
+                            <th>
+                                Delete
+                            </th>
+                            <th>
+                                Add Photo
+                            </th>
 
                         </tr>
                     </thead>
@@ -45,8 +58,19 @@
                                 <td> @item.Category.Name</td>
                                 <td>
                                     <a class="btn btn-primary text-light">Detail</a>
+                                </td>
+                                <td>
                                     <a class="btn btn-warning text-light" asp-area="Admin" asp-controller="Service" asp-action="Update" asp-route-Id="@item.Id">Update</a>
+
+                                </td>
+                                <td>
                                     <a class="btn btn-danger text-light" asp-area="Admin" asp-controller="Service" asp-action="Delete" asp-route-Id="@item.Id">Delete</a>
+
+                                </td>
+                                <td>
+                                    @*<a class="btn btn-outline-success text-dark" asp-area="Admin" asp-controller="Service" asp-action="Delete" asp-route-Id="@item.Id">Add Photo</a>*@
+
+                                    <button id="btnUpload" type="submit" text="Upload" runat="server">adad</button>
                                 </td>
                             </tr>
                             count++;
