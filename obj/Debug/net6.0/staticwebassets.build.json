@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fp06wLTy+3/gyDFj7zMaLgfh9MBJabxSpv40zVP9u4c=",
+  "Hash": "4fZe2ypZ2kQb/iAJcyFlOGbda216tLMiEWKUlLSPztk=",
   "Source": "WebFrontToBack",
   "BasePath": "_content/WebFrontToBack",
   "Mode": "Default",
@@ -2652,6 +2652,40 @@
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\boxicons.woff2"
     },
     {
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\04278e8c-f0b0-4d8f-9bc6-dacfe7110c2eInShot_20230429_165949775.png",
+      "SourceId": "WebFrontToBack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\",
+      "BasePath": "_content/WebFrontToBack",
+      "RelativePath": "assets/img/04278e8c-f0b0-4d8f-9bc6-dacfe7110c2eInShot_20230429_165949775.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\04278e8c-f0b0-4d8f-9bc6-dacfe7110c2eInShot_20230429_165949775.png"
+    },
+    {
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\4eaedd75-d887-4320-a1e4-21812bd3c446IMG-20230429-WA0033.jpg",
+      "SourceId": "WebFrontToBack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\",
+      "BasePath": "_content/WebFrontToBack",
+      "RelativePath": "assets/img/4eaedd75-d887-4320-a1e4-21812bd3c446IMG-20230429-WA0033.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\4eaedd75-d887-4320-a1e4-21812bd3c446IMG-20230429-WA0033.jpg"
+    },
+    {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\apple-icon.png",
       "SourceId": "WebFrontToBack",
       "SourceType": "Discovered",
@@ -2754,12 +2788,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\banner-img-02.svg"
     },
     {
-      "Identity": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\ca45fcaa-ee52-4bb0-a503-3a87dcb99d79IMG-20230429-WA0033.jpg",
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\fae715b9-628b-4b00-9719-d0a96a70ab00InShot_20230429_165949775.png",
       "SourceId": "WebFrontToBack",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\",
       "BasePath": "_content/WebFrontToBack",
-      "RelativePath": "assets/img/ca45fcaa-ee52-4bb0-a503-3a87dcb99d79IMG-20230429-WA0033.jpg",
+      "RelativePath": "assets/img/fae715b9-628b-4b00-9719-d0a96a70ab00InShot_20230429_165949775.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2768,7 +2802,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\ca45fcaa-ee52-4bb0-a503-3a87dcb99d79IMG-20230429-WA0033.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\fae715b9-628b-4b00-9719-d0a96a70ab00InShot_20230429_165949775.png"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\favicon.ico",
@@ -3381,23 +3415,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\services-08.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\team-01.jpg",
-      "SourceId": "WebFrontToBack",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\",
-      "BasePath": "_content/WebFrontToBack",
-      "RelativePath": "assets/img/team-01.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\team-01.jpg"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\team-02.jpg",

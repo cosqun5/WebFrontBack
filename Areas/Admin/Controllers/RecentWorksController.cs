@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using WebFrontToBack.Areas.Admin.RecentWorkViewModels;
 using WebFrontToBack.DAL;
 using WebFrontToBack.Models;
+using WebFrontToBack.Utilities.Extensions;
 
 namespace WebFrontToBack.Areas.Admin.Controllers
 {
@@ -9,9 +11,11 @@ namespace WebFrontToBack.Areas.Admin.Controllers
 	public class RecentWorksController : Controller
 	{
 		private readonly AppDbContext _context;
-		public RecentWorksController(AppDbContext context)
+		private readonly IWebHostEnvironment _webHostEnvironment;
+		public RecentWorksController(AppDbContext context, IWebHostEnvironment webHostEnvironment)
 		{
 			_context = context;
+			_webHostEnvironment = webHostEnvironment;
 		}
 		public async Task<IActionResult> Index()
 		{
@@ -24,13 +28,33 @@ namespace WebFrontToBack.Areas.Admin.Controllers
 			return View();
 		}
 		[HttpPost]
-		public async Task<IActionResult> Create(RecentWork work)
+		public async Task<IActionResult> Create(CreateRecentWorkVM work)
 		{
+
 			if (!ModelState.IsValid)
 			{
 				return View();
 			}
-			await _context.AddAsync(work);
+			if (!work.Photo.CheckContentType("image/"))
+			{
+				ModelState.AddModelError("Photo", $"{work.Photo.FileName} - must be image type");
+			}
+			if (!work.Photo.CheckFileSize(200))
+			{
+				ModelState.AddModelError("Photo", $"{work.Photo.FileName} - file must be image size 200kb");
+
+			}
+			string root = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "img");
+
+			string FileName = await work.Photo.SaveAsync(root);
+			RecentWork recentWork = new RecentWork()
+			{
+				Title = work.Title,
+				Description = work.Description,
+				Path = FileName
+			};
+
+			await _context.AddAsync(recentWork);
 			await _context.SaveChangesAsync();
 			return RedirectToAction("Index");
 		}
@@ -60,17 +84,30 @@ namespace WebFrontToBack.Areas.Admin.Controllers
 			_context.SaveChangesAsync();
 			return RedirectToAction("Index");
 		}
-		public IActionResult Delete(int Id)
+		public async Task<IActionResult> Delete(int Id)
 		{
-
-			RecentWork? work = _context.RecentWorks.Find(Id);
-			if (work == null)
+			RecentWork work = _context.RecentWorks.Find(Id);
+			if (work == null) return NotFound();
+			string imagePath = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "img", work.Path);
+			if (System.IO.File.Exists(imagePath))
 			{
-				return NotFound();
+				System.IO.File.Delete(imagePath);
 			}
 			_context.RecentWorks.Remove(work);
-			_context.SaveChangesAsync();
+			await _context.SaveChangesAsync();
 			return RedirectToAction("Index");
 		}
+		//public IActionResult Delete(int Id)
+		//{
+
+		//	RecentWork? work = _context.RecentWorks.Find(Id);
+		//	if (work == null)
+		//	{
+		//		return NotFound();
+		//	}
+		//	_context.RecentWorks.Remove(work);
+		//	_context.SaveChangesAsync();
+		//	return RedirectToAction("Index");
+		//}
 	}
 }

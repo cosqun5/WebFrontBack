@@ -621,6 +621,14 @@
       "PackagePath": "staticwebassets\\assets\\fonts\\boxicons.woff2"
     },
     {
+      "Id": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\04278e8c-f0b0-4d8f-9bc6-dacfe7110c2eInShot_20230429_165949775.png",
+      "PackagePath": "staticwebassets\\assets\\img\\04278e8c-f0b0-4d8f-9bc6-dacfe7110c2eInShot_20230429_165949775.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\4eaedd75-d887-4320-a1e4-21812bd3c446IMG-20230429-WA0033.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\4eaedd75-d887-4320-a1e4-21812bd3c446IMG-20230429-WA0033.jpg"
+    },
+    {
       "Id": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\apple-icon.png",
       "PackagePath": "staticwebassets\\assets\\img\\apple-icon.png"
     },
@@ -645,8 +653,8 @@
       "PackagePath": "staticwebassets\\assets\\img\\banner-img-02.svg"
     },
     {
-      "Id": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\ca45fcaa-ee52-4bb0-a503-3a87dcb99d79IMG-20230429-WA0033.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\ca45fcaa-ee52-4bb0-a503-3a87dcb99d79IMG-20230429-WA0033.jpg"
+      "Id": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\fae715b9-628b-4b00-9719-d0a96a70ab00InShot_20230429_165949775.png",
+      "PackagePath": "staticwebassets\\assets\\img\\fae715b9-628b-4b00-9719-d0a96a70ab00InShot_20230429_165949775.png"
     },
     {
       "Id": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\favicon.ico",
@@ -791,10 +799,6 @@
     {
       "Id": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\services-08.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\services-08.jpg"
-    },
-    {
-      "Id": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\team-01.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\team-01.jpg"
     },
     {
       "Id": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\team-02.jpg",

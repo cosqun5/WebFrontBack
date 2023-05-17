@@ -42,7 +42,7 @@ namespace WebFrontToBack.Areas.Admin.Controllers
                 ModelState.AddModelError("Photo", $"{team.Photo.FileName}must be image type");
                 return View();
             }
-            if (!team.Photo.CheckFileSize(200))
+            if (!team.Photo.CheckFileSize(500))
             {
                 ModelState.AddModelError("Photo", $"{team.Photo.FileName} - file must be size less than 200kb ");
                 return View();
@@ -88,19 +88,23 @@ namespace WebFrontToBack.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Delete(int id)
-        {
-            TeamMember member = _context.TeamMembers.Find(id);
-            if (member == null)
-            {
-                return NotFound();
-            }
-            _context.TeamMembers.Remove(member);
-            _context.SaveChanges(); 
-            return RedirectToAction("Index");
-        }
+    
+		public async Task<IActionResult> Delete(int id)
+		{
+			TeamMember teamMember = await _context.TeamMembers.FindAsync(id);
+			if (teamMember == null) return NotFound();
+			string imagePath = Path.Combine(_webHostEnvironment.WebRootPath, "assets", "img", teamMember.Path);
+			if (System.IO.File.Exists(imagePath))
+			{
+				System.IO.File.Delete(imagePath);
+			}
 
-      
+			_context.TeamMembers.Remove(teamMember);
+			await _context.SaveChangesAsync();
+			return RedirectToAction(nameof(Index));
+		}
 
-    }
+
+
+	}
 }

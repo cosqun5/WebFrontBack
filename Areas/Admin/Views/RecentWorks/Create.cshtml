@@ -1,4 +1,4 @@
-﻿@model RecentWork
+﻿@model CreateRecentWorkVM
 @{
 	ViewData["Title"] = "Create";
 }
@@ -7,7 +7,7 @@
 	<div class="card">
 		<div class="card-body">
 
-			<form class="forms-sample" method="post" action="create">
+			<form class="forms-sample" method="post" action="create" enctype="multipart/form-data">
 				<div class="form-group">
 					<label asp-for="Title"></label>
 					<input asp-for="Title" class="form-control" placeholder="Category">
@@ -18,10 +18,11 @@
 					<input asp-for="Description" class="form-control" placeholder="Category">
 					<span class="text text-danger" asp-validation-for="Description"></span>
 				</div>
+			
 				<div class="form-group">
-					<label asp-for="Path"></label>
-					<input asp-for="Path" class="form-control" placeholder="Category">
-					<span class="text text-danger" asp-validation-for="Path"></span>
+					<label asp-for="Photo"></label>
+					<input asp-for="Photo" class="form-control" placeholder="Category">
+					<span class="text text-danger" asp-validation-for="Photo"></span>
 				</div>
 				<button type="submit" class="btn btn-primary me-2 text-light">Create</button>
 				<button class="btn btn-light" asp-action="Index">Go back</button>
