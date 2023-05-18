@@ -17,5 +17,6 @@ namespace WebFrontToBack.Controllers
             ICollection<TeamMember> teamMembers = await _context.TeamMembers.ToListAsync();
             return View(teamMembers);
         }
-    }
+		
+	}
 }

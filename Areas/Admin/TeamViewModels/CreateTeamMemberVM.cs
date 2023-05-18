@@ -1,10 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using WebFrontToBack.Models;
 
 namespace WebFrontToBack.Areas.Admin.TeamViewModels
 {
 	public class CreateTeamMemberVM
 	{
+		//public TeamMember? TeamMembers;
+
 		public int Id { get; set; }
 
 

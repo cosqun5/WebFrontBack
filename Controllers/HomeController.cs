@@ -32,5 +32,6 @@ namespace WebFrontToBack.Controllers
             };
             return View(homeVM);
         }
+
     }
 }

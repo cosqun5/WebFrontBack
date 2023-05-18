@@ -45,6 +45,12 @@ namespace WebFrontToBack.Areas.Admin.Controllers
 			{
 				return View();
 			}
+			bool isExists = await _context.Categories.AllAsync(s => s.Name.ToLower() == service.Services.Name.ToLower());
+			if (!isExists)
+			{
+				ModelState.AddModelError("Name", "Service name already exists");
+				return View(service);
+			}
 
 			//bool isExists = await _context.Categories.AnyAsync(c =>
 			//  c.Name.ToLower().Trim() == service.Services.Name.ToLower().Trim());
@@ -96,7 +102,7 @@ namespace WebFrontToBack.Areas.Admin.Controllers
 			newservice.Name = servicevm.Services.Name;
 			newservice.Description = servicevm.Services.Description;
 			newservice.Price = servicevm.Services.Price;
-			newservice.Category.Name = servicevm.Services.Category.Name;
+			newservice.CategoryId = servicevm.Services.CategoryId;
 			_context.Services.Update(newservice);
 			_context.SaveChanges();
 			return RedirectToAction("Index");

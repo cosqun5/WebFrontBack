@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4fZe2ypZ2kQb/iAJcyFlOGbda216tLMiEWKUlLSPztk=",
+  "Hash": "/giiNwgIykNa/gHxvXKUe9FHNSvyyx/xoV4HhcU6uPU=",
   "Source": "WebFrontToBack",
   "BasePath": "_content/WebFrontToBack",
   "Mode": "Default",
@@ -2667,23 +2667,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\04278e8c-f0b0-4d8f-9bc6-dacfe7110c2eInShot_20230429_165949775.png"
-    },
-    {
-      "Identity": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\4eaedd75-d887-4320-a1e4-21812bd3c446IMG-20230429-WA0033.jpg",
-      "SourceId": "WebFrontToBack",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\",
-      "BasePath": "_content/WebFrontToBack",
-      "RelativePath": "assets/img/4eaedd75-d887-4320-a1e4-21812bd3c446IMG-20230429-WA0033.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\4eaedd75-d887-4320-a1e4-21812bd3c446IMG-20230429-WA0033.jpg"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\WebFrontToBack\\wwwroot\\assets\\img\\apple-icon.png",

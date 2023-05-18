@@ -24,7 +24,7 @@
 
 				</div>
 				<select style="width:150px; color:black" asp-for="Services.CategoryId" class="form-control">
-					@foreach (Category category in Model.Categories)
+					@foreach (Category? category in Model.Categories)
 					{
 						<option value="@category.Id">@category.Name</option>
 					}

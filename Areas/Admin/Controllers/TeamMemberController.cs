@@ -62,9 +62,27 @@ namespace WebFrontToBack.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+
+
+
+
+
+        //     public IActionResult Edit(int id)
+        //     {
+        //TeamMember? teamMember = _context.TeamMembers.Find(id);
+        //CreateTeamMemberVM createTeamMemberVM = new CreateTeamMemberVM()
+        //         {
+        //	TeamMembers = teamMember
+
+        //         };
+        //         return View(createTeamMemberVM);
+
+        //     }
+
         public IActionResult Edit(int id)
         {
-            TeamMember? teamMember = _context.TeamMembers.Find(id);
+
+			TeamMember? teamMember = _context.TeamMembers.Find(id);
             if (teamMember == null)
             {
                 return NotFound();
@@ -72,24 +90,33 @@ namespace WebFrontToBack.Areas.Admin.Controllers
 
             return View(teamMember);
         }
-        [HttpPost]
-        public IActionResult Edit(TeamMember team)
-        {
-            TeamMember? member = _context.TeamMembers.Find(team.Id);
-            if (member == null)
-            {
-                return NotFound();
-            }
-            member.FulName = team.FulName;
-            member.Profection = team.Profection;
-            member.Path = team.Path;
-            _context.TeamMembers.Update(member);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //[HttpPost]
+        //public IActionResult Edit(TeamMember team)
+        //{
+        //    TeamMember? member = _context.TeamMembers.Find(team.Id);
+        //    if (member == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    member.FulName = team.FulName;
+        //    member.Profection = team.Profection;
+        //    member.Path = team.Path;
+        //    _context.TeamMembers.Update(member);
+        //    _context.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
-    
-		public async Task<IActionResult> Delete(int id)
+
+
+
+
+
+
+
+
+
+
+        public async Task<IActionResult> Delete(int id)
 		{
 			TeamMember teamMember = await _context.TeamMembers.FindAsync(id);
 			if (teamMember == null) return NotFound();
