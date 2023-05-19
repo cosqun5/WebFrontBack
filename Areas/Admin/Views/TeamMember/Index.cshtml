@@ -39,7 +39,7 @@
 
                                 <td> @item.FulName</td>
                                 <td> @item.Profection</td>
-                                <td> @item.Path</td>
+								<td> <img src="~/assets/img/@item.Path"/> </td>
                                 <td>
                                     <a class="btn btn-primary text-light">Detail</a>
                                     <a class="btn btn-warning text-light" asp-area="Admin" asp-controller="TeamMember" asp-action="Edit" asp-route-Id="@item.Id">Update</a>

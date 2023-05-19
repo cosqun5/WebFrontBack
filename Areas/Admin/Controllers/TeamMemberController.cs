@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.Metrics;
 using System.IO;
-using WebFrontToBack.Areas.Admin.TeamViewModels;
+using WebFrontToBack.Areas.Admin.ViewModels;
 using WebFrontToBack.DAL;
 using WebFrontToBack.Migrations;
 using WebFrontToBack.Models;

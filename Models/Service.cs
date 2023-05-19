@@ -26,5 +26,5 @@ public class Service
 	[Required]
 	public int? CategoryId { get; set; }
     public Category? Category { get; set; }
-    public virtual List<ServiceImage>? ServiceImages { get; set; }
+    public virtual List<ServiceImage> ServiceImages { get; set; }
 }
