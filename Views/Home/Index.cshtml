@@ -9,43 +9,7 @@
     <div id="index_banner" class="banner-vertical-center-index container-fluid pt-5">
 
         <!-- Start slider -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <ol class="carousel-indicators">
-                @for (int i = 0; i < Model.Sliders.Count; i++)
-                {
-                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@i" class="@(Model.Sliders[i].IsActive?"active":"")"></li>
-                }
-               
-            </ol>
-            <div class="carousel-inner">
-                @foreach (Slider slider in Model.Sliders)
-                {
-                    <div class="carousel-item @(slider.IsActive?"active":"")">
-
-                        <div class="py-5 row d-flex align-items-center">
-                            <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left py-5 pb-5">
-                                <h1 class="banner-heading h1 text-secondary display-3 mb-0 pb-5 mx-0 px-0 light-300 typo-space-line">
-                                    @Html.Raw( @slider.Title)
-                                </h1>
-                                <p class="banner-body text-muted py-3 mx-0 px-0">
-                                    @Html.Raw(@slider.Description)
-                                </p>
-                                <a class="banner-button btn rounded-pill btn-outline-primary btn-lg px-4" href="@slider.Url" role="button">Get Started</a>
-                            </div>
-                        </div>
-
-                    </div>
-                }
-            </div>
-            <a class="carousel-control-prev text-decoration-none" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
-                <i class='bx bx-chevron-left'></i>
-                <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next text-decoration-none" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
-                <i class='bx bx-chevron-right'></i>
-                <span class="visually-hidden">Next</span>
-            </a>
-        </div>
+        @await Component.InvokeAsync("Slider")
         <!-- End slider -->
 
     </div>
@@ -90,24 +54,12 @@
 <section class="container overflow-hidden py-5">
     <div class="row gx-5 gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 projects">
 
-        @foreach (Service service in Model.Services)
-        {
-            <!-- Start Recent Work -->
-            <div class="col-xl-3 col-md-4 col-sm-6 project @service.Category.Name.ToLower().Trim()">
-                <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                    @*<img class="service card-img" src="~/assets/img/@service.ServiceImages.Where(i=>i.IsActive).FirstOrDefault().Path" alt="card image">*@
-                    <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="service-work-content text-left text-light">
-                            <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">@service.Name</span>
-                            <p class="card-text">@service.Description</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
 
-            <!-- End Recent Work -->
-        }
-      
+
+        @await Component.InvokeAsync("Service")
+
+
+
 
     </div>
 </section>

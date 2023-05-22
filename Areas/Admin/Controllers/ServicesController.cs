@@ -33,7 +33,7 @@ namespace WebFrontToBack.Areas.Admin.Controllers
                 .Include(s => s.ServiceImages)
                 .ToListAsync();
             return View(services);
-        }
+            }
 
         public async Task<IActionResult> Create()
         {

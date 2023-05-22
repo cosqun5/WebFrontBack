@@ -1069,3 +1069,4 @@ C:\Users\LENOVO\Desktop\WebFrontToBack\obj\Debug\net6.0\refint\WebFrontToBack.dl
 C:\Users\LENOVO\Desktop\WebFrontToBack\obj\Debug\net6.0\WebFrontToBack.pdb
 C:\Users\LENOVO\Desktop\WebFrontToBack\obj\Debug\net6.0\WebFrontToBack.genruntimeconfig.cache
 C:\Users\LENOVO\Desktop\WebFrontToBack\obj\Debug\net6.0\ref\WebFrontToBack.dll
+C:\Users\LENOVO\Desktop\WebFrontToBack\bin\Debug\net6.0\libman.json

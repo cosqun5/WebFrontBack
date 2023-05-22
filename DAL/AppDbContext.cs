@@ -15,6 +15,9 @@ public class AppDbContext:DbContext
     public DbSet<ServiceImage> ServiceImages { get; set; }
     public DbSet<TeamMember> TeamMembers { get; set; }
 	public DbSet<RecentWork> RecentWorks { get; set; }
+    public  DbSet<Work> Works { get; set; }
+    public  DbSet<WorkCategory> WorkCategories { get; set; }
+    public  DbSet<WorkImage> WorkImages { get; set; }
 
 
 }

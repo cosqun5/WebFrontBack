@@ -61,7 +61,8 @@ namespace WebFrontToBack.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -161,7 +162,8 @@ namespace WebFrontToBack.Migrations
 
                     b.Property<string>("FulName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Path")
                         .IsRequired()
@@ -174,6 +176,83 @@ namespace WebFrontToBack.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TeamMembers");
+                });
+
+            modelBuilder.Entity("WebFrontToBack.Models.Work", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("WorkCategoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WorkCategoryId");
+
+                    b.ToTable("Works");
+                });
+
+            modelBuilder.Entity("WebFrontToBack.Models.WorkCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WorkCategories");
+                });
+
+            modelBuilder.Entity("WebFrontToBack.Models.WorkImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("WorkId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WorkId");
+
+                    b.ToTable("WorkImages");
                 });
 
             modelBuilder.Entity("WebFrontToBack.Models.Service", b =>
@@ -196,6 +275,28 @@ namespace WebFrontToBack.Migrations
                     b.Navigation("Service");
                 });
 
+            modelBuilder.Entity("WebFrontToBack.Models.Work", b =>
+                {
+                    b.HasOne("WebFrontToBack.Models.WorkCategory", "WorkCategories")
+                        .WithMany("works")
+                        .HasForeignKey("WorkCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("WorkCategories");
+                });
+
+            modelBuilder.Entity("WebFrontToBack.Models.WorkImage", b =>
+                {
+                    b.HasOne("WebFrontToBack.Models.Work", "Work")
+                        .WithMany("WorkImages")
+                        .HasForeignKey("WorkId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Work");
+                });
+
             modelBuilder.Entity("WebFrontToBack.Models.Category", b =>
                 {
                     b.Navigation("Services");
@@ -204,6 +305,16 @@ namespace WebFrontToBack.Migrations
             modelBuilder.Entity("WebFrontToBack.Models.Service", b =>
                 {
                     b.Navigation("ServiceImages");
+                });
+
+            modelBuilder.Entity("WebFrontToBack.Models.Work", b =>
+                {
+                    b.Navigation("WorkImages");
+                });
+
+            modelBuilder.Entity("WebFrontToBack.Models.WorkCategory", b =>
+                {
+                    b.Navigation("works");
                 });
 #pragma warning restore 612, 618
         }
